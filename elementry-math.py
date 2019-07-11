@@ -19,7 +19,7 @@ def start_play():
 def play():
     exercise = build_new_ex()
     answer = input(exercise+"= ")
-    if eval(exercise) == eval(answer):
+    if round(eval(exercise),2) == eval(answer):
         correct_answers.append(exercise + "="+answer)
         ans = input("Correct!  Next exercise ?")
         while ans != None:
@@ -47,7 +47,7 @@ def play():
                     ans = input( "Do you want the next exercise ? insert yes or no  ")
 
 def build_new_ex():
-    operators = ["+", "-", "*"]
+    operators = ["+", "-", "*", "/"]
     return (str(random.randint(1, 20)) + random.choice(operators) + str(random.randint(1, 11)))
 
 
